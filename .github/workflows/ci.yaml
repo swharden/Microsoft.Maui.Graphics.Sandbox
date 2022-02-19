@@ -13,8 +13,13 @@ jobs:
     name: Build
     runs-on: windows-latest
     steps:
-      - name: 🛒 Checkout
+      - name: 🛒 Checkout Sandbox
         uses: actions/checkout@v2
+      - name: 🛒 Checkout Microsoft.Maui.Graphics
+        uses: actions/checkout@v2
+        with:
+          name: dotnet/Microsoft.Maui.Graphics
+          path: ../
       - name: ✨ Setup .NET 6
         uses: actions/setup-dotnet@v1
         with:
