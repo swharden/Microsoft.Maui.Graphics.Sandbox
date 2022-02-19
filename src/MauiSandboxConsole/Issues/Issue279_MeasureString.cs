@@ -9,6 +9,7 @@ public static class Issue279_MeasureString
     {
         // setup a canvas with a blue background
         using BitmapExportContext bmp = new SkiaBitmapExportContext(450, 150, 1.0f);
+
         ICanvas canvas = bmp.Canvas;
         canvas.FillColor = Colors.Navy;
         canvas.FillRectangle(0, 0, bmp.Width, bmp.Height);
@@ -16,7 +17,7 @@ public static class Issue279_MeasureString
         // define and measure a string
         PointF stringLocation = new(50, 50);
         string stringText = "Hello, Maui.Graphics!";
-        Font font = new();
+        Font font = new("Consolas");
         float fontSize = 32;
         SizeF stringSize = canvas.GetStringSize(stringText, font, fontSize);
         Rectangle stringRect = new(stringLocation, stringSize);
@@ -25,7 +26,8 @@ public static class Issue279_MeasureString
         canvas.StrokeColor = Colors.White;
         canvas.DrawRectangle(stringRect);
         canvas.FontColor = Colors.Yellow;
-        canvas.FontSize = fontSize - 1;
+        canvas.FontSize = fontSize;
+        canvas.Font = font;
         canvas.DrawString(
             value: stringText,
             x: stringLocation.X,
