@@ -4,7 +4,7 @@ using Microsoft.Maui.Graphics.Skia;
 
 namespace MauiSandboxConsole.Issues;
 
-public class Issue253
+public class Issue253_ColorFromInt
 {
     public static void Run()
     {

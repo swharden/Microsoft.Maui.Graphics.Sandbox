@@ -3,7 +3,7 @@ using Microsoft.Maui.Graphics;
 
 namespace MauiSandboxConsole.Issues;
 
-public class Issue247
+public class Issue247_Downsize
 {
     public static void Run()
     {
